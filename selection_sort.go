@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+  "fmt"
+  "./utils"
+)
 
 func selection_sort(v []int, n int) {
   var i,j int;
@@ -15,14 +18,8 @@ func selection_sort(v []int, n int) {
       }
     }
 
-    swap(&v[min], &v[i])
+    utils.Swap(&v[min], &v[i])
   }
-}
-
-func swap(a, b *int) {
-  aux := *b
-  *b = *a
-  *a = aux
 }
 
 func main() {

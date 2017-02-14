@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+  "fmt"
+  "./utils"
+)
 
 func insertion_sort(v []int, n int) {
   var i, j int;
@@ -9,16 +12,10 @@ func insertion_sort(v []int, n int) {
     j = i;
 
     for j > 0 && v[j] < v[j - 1] {
-      swap(&v[j], &v[j - 1])
+      utils.Swap(&v[j], &v[j - 1])
       j--
     }
   }
-}
-
-func swap(a *int, b *int) {
-  aux := *a
-  *a = *b
-  *b = aux
 }
 
 func main() {
